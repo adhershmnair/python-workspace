@@ -26,3 +26,9 @@ You need to ensure that the redirect URI in your Google Cloud Console matches th
 7. Download the `client_secret.json` file and paste it in the root directory as it is ignored in .gitignore.
 
 Edit the file `facerecognition-google-photos.py` and make changes for the image filter from Google photos.
+
+## facerecognition-google-drive.py
+
+Integrated Google Drives to identify the images. To get files/images from Google Drives, you would need to use the Google Drives API.
+Follow the same steps for Google Photos API, or Enable the Google Drive API to existing APIs and Services.
+Edit file `facerecognition-google-drive.py` change `folder_id` to fetch from a specific folder from Google Drive.
