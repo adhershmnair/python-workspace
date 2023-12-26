@@ -2,7 +2,6 @@ import io
 import cv2
 import face_recognition
 import numpy as np
-import os
 from datetime import datetime, timedelta
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
