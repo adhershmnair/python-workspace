@@ -12,7 +12,6 @@ app = Flask(__name__)
 # for local webcam use cv2.VideoCapture(0)
 # camera = cv2.VideoCapture(0)
 
-camera = cv2.VideoCapture(0)
 # Directory containing images
 image_dir = "images"
 # Lists to hold face encodings and names
