@@ -28,16 +28,19 @@ known_face_names = []
 # Loop over each file in the directory
 for filename in os.listdir(image_dir):
     # Only process files with .jpeg or .jpg extension
-    if filename.endswith(".jpeg") or filename.endswith(".jpg") or filename.endswith(".JPG"):
+    if filename.endswith(".jpeg") or filename.endswith(".jpg") or filename.endswith(".JPG") or filename.endswith(".png") or filename.endswith(".PNG"):
         # Load image
         image = face_recognition.load_image_file(os.path.join(image_dir, filename))
         # Get face encodings for the image
-        face_encoding = face_recognition.face_encodings(image)[0]
-        # Add face encoding to list
-        known_face_encodings.append(face_encoding)
-        # Add name to list. We remove the file extension to get the name
-        known_face_names.append(os.path.splitext(filename)[0])
-
+        face_encodings = face_recognition.face_encodings(image)
+        if face_encodings:
+            face_encoding = face_encodings[0]
+            # Add face encoding to list
+            known_face_encodings.append(face_encoding)
+            # Add name to list. We remove the file extension to get the name
+            known_face_names.append(os.path.splitext(filename)[0])
+        else:
+            print(f"No faces found in the image {filename}")
 # Initialize some variables
 face_locations = []
 face_encodings = []
