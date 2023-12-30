@@ -71,6 +71,6 @@ def process_frame():
     return jsonify({'status': 'success', 'names': face_names})
 
 if __name__ == '__main__':
-    #app.run(debug=True, host='0.0.0.0')
-    http_server = WSGIServer(('0.0.0.0', os.getenv("PORT", default=3003)), app)
-    http_server.serve_forever()
+    app.run(debug=True, host=os.getenv("DOMAIN_NAME", default='0.0.0.0'), port=os.getenv("PORT", default=3003))
+    # http_server = WSGIServer((os.getenv("DOMAIN_NAME", default='0.0.0.0'), os.getenv("PORT", default=3003)), app)
+    # http_server.serve_forever()
