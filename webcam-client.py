@@ -70,4 +70,4 @@ def process_frame():
     return jsonify({'status': 'success', 'names': face_names})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=3003, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0')
