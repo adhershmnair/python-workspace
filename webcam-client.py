@@ -4,6 +4,7 @@ import numpy as np
 import cv2
 import os
 import base64
+from gevent.pywsgi import WSGIServer
 
 app = Flask(__name__)
 
@@ -70,4 +71,6 @@ def process_frame():
     return jsonify({'status': 'success', 'names': face_names})
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    #app.run(debug=True, host='0.0.0.0')
+    http_server = WSGIServer(('', 5000), app)
+    http_server.serve_forever()
