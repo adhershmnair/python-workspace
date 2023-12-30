@@ -72,5 +72,5 @@ def process_frame():
 
 if __name__ == '__main__':
     #app.run(debug=True, host='0.0.0.0')
-    http_server = WSGIServer(('', 5000), app)
+    http_server = WSGIServer(('0.0.0.0', 5000), app)
     http_server.serve_forever()
